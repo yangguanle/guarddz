@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>添加/编辑任务详情</title>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="decorator" content="default">
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<meta name="author" content="http://www.jeeplus.org/">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=9,IE=10">
+		<meta http-equiv="Expires" content="0">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-store">
+		<!-- 引入jquery插件 -->
+		<script src="static/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+		<script src="static/jquery/jquery-migrate-1.1.1.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="static/TableDnD/jquery.tablednd.js"></script>
+		<!-- 引入依赖的第三方插件 -->
+		<script src="static/slimscroll/jquery.slimscroll.min.js"></script>
+		<script src="static/jquery-validation/1.14.0/jquery.validate.min.js" type="text/javascript"></script>
+		<script src="static/jquery-validation/1.14.0/localization/messages_zh.min.js" type="text/javascript"></script>
+		<link href="static/jquery-jbox/2.3/Skins/Bootstrap/jbox.min.css" rel="stylesheet">
+		<script src="static/jquery-jbox/2.3/jquery.jBox-2.3.min.js" type="text/javascript"></script>
+		<script src="static/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+		<link href="static/My97DatePicker/skin/WdatePicker.css" rel="stylesheet" type="text/css">
+		<script src="static/pace/pace.min.js"></script>
+		<script src="static/metisMenu/jquery.metisMenu.js"></script>
+		<link href="static/iCheck/custom.css" rel="stylesheet">
+		<script src="static/iCheck/icheck.min.js"></script>
+		<script src="static/iCheck/icheck-init.js"></script>
+		<link href="static/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+		<script src="static/dataTables/jquery.dataTables.js"></script>
+		<script src="static/dataTables/dataTables.bootstrap.js"></script>
+		<!-- jeeplus -->
+		
+		
+		<link href="static/common/jeeplus.css" type="text/css" rel="stylesheet">
+		<script src="static/common/jeeplus.js" type="text/javascript"></script>
+		<!-- jquery ui -->
+		<script src="static/jquery-ui/jquery-ui.min.js"></script>
+		<!-- 引入bootstrap插件
+		bootswatch主题效果不怎么好，停止切换，使用官网的默认版本，如果你想切换主题请访问http://bootswatch.com/下载最新版版主题，by刘高峰 -->
+		<link href="static/bootstrap/3.3.4/css_default/bootstrap.min.css" type="text/css" rel="stylesheet" />
+		<link href="static/bootstrap/3.3.4/css_default/bootstrap.min.css" type="text/css" rel="stylesheet">
+		<script src="static/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
+		<link href="static/awesome/4.4/css/font-awesome.min.css" rel="stylesheet">
+		<link href="static/common/css/style.css?v=3.2.0" type="text/css" rel="stylesheet">
+		<!-- 引入layer插件 -->
+		<script src="static/layer-v2.3/layer/layer.js"></script>
+		<link rel="stylesheet" href="http://www.jeeplus.org:8080static/layer-v2.3/layer/skin/layer.css" id="layui_layer_skinlayercss" style="">
+		<script src="static/layer-v2.3/layer/laydate/laydate.js"></script>
+		<link type="text/css" rel="stylesheet" href="http://www.jeeplus.org:8080static/layer-v2.3/layer/laydate/need/laydate.css">
+		<link type="text/css" rel="stylesheet" href="http://www.jeeplus.org:8080static/layer-v2.3/layer/laydate/skins/default/laydate.css" id="LayDateSkin">
+		
+		<!-- 引入webuploader -->
+		<link rel="stylesheet" type="text/css" href="static/webuploader-0.1.5/webuploader.css">
+		<script type="text/javascript" src="static/webuploader-0.1.5/webuploader.js"></script>
+		<!-- 引入自定义文件 -->
+		<script src="static/common/mustache.min.js" type="text/javascript"></script>
+		<script src="static/common/content.js" type="text/javascript"></script>
+		<link href="static/common/css/login.css" type="text/css" rel="stylesheet">
+		<script type="text/javascript">
+			var ctx = '/jeeplus/a', ctxStatic='/jeeplus/static';
+		</script>
+		<!-- 单独引入 -->
+
+		<!-- 以上删除 -->
+		<script src="static/jquery-select2/3.5.4/select2.min.js" type="text/javascript"></script>
+		<link href="static/jquery-select2/3.5.4" type="text/css/select2.css" rel="stylesheet">
+
+		<style>
+			
+		</style>
+	</head>
+	<body class="gray-bg">
+		<div class="wrapper wrapper-content">
+			<div class="ibox">
+				<div class="ibox-title">
+					<h5>添加/编辑任务详情</h5>
+                </div>
+                <div class="ibox-content">
+                	<form:form id="inputForm" style="width:70%;margin:0 auto"  modelAttribute="taskListBean" action="${ctx}/taskList/taskListSave" method="post" class="form-horizontal form-group">
+		<table class="table table-bordered table-condensed dataTables-example dataTable no-footer">
+			<tbody>
+			<tr>
+				<td class="width-15 active">
+					<label class="pull-right">精选任务:</label>
+				</td>
+				<td class="width-35">
+					<input id="isSpecial" name="isSpecial" type="radio" value="1" class="required">是
+					<input id="isSpecia2" name="isSpecial" type="radio" style="margin-left: 62px;" value="0" class="required">否</td>
+			</tr>
+			<tr>
+				<td class="width-15 active">
+					<label class="pull-right">任务名称:</label>
+				</td>
+				<td class="width-35">
+					<input id="taskName" name="taskName" type="radio"class="required">一次性
+					<input id="taskName1" name="taskName" type="radio" style="margin-left: 36px;" class="required">周期性
+					<select id="listType" name="listType" maxlength="50" style="display:none; margin-left: 16px; height: 32px; width: 102px;" aria-invalid="false" class="valid">
+						<option value="" selected="selected">请选择</option>
+						<option value="1">每月</option>
+						<option value="3">每日</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="width-15 active">
+					<label class="pull-right">模块标识:</label>
+				</td>
+				<td class="width-35">
+					<form:select path="modelFlag" maxlength="50" class="form-control required" >
+						<form:option value="">请选择</form:option>
+						<c:forEach items="${modelFlagList}" var="item">
+							<form:option value="${item.modelFlag}">${item.modelName}</form:option>
+						</c:forEach>
+					</form:select>
+					<%-- <select id="modelFlag" name="listType" maxlength="50" style="display:none; margin-left: 16px; height: 32px; width: 102px;" aria-invalid="false" class="valid">
+						<option value="" selected="selected">请选择</option>
+						<option value="1">每月</option>
+						<option value="3">每日</option>
+					</select>--%>
+				</td>
+			</tr>
+			<tr id="goodsHs" style="display:none;">
+				<td class="width-15 active">
+					<label class="pull-right">分类:</label>
+				</td>
+				<td class="width-35">
+					<div>
+							<form:select path="modelName" maxlength="50" id="sssa" class="form-control required">
+								<form:option value="">请选择</form:option>
+								<c:forEach items="${goodsList}" var="item">
+									<form:option value="${item.id}">${item.goodsName}</form:option>
+								</c:forEach>
+							</form:select>
+						<span style="margin-left: 55px">充值金额</span>
+						<input id="chargeMoney" name="chargeMoney" type="text" maxlength="20" value="" style="width:  119px;height: 34px;font-size: 12px;">
+
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="width-15 active">
+					<label class="pull-right">名单类型:</label>
+				</td>
+				<td class="width-35">
+					<select id="listType1" name="listType" maxlength="50" style="width: 150px; height: 34px;" aria-invalid="false" class="valid">
+						<option value="" selected="selected">请选择</option>
+						<option value="1">黑名单</option>
+						<option value="0">白名单</option>
+					</select>
+						<span style="margin-left: 64px">名单ID</span>
+					<form:select path="whiteId" maxlength="50"  style="width: 119px; height: 34px;"  class="form-control required">
+							<form:option value="">请选择</form:option>
+						<c:forEach items="${whiteTypeList}" var="item">
+							<form:option value="${item.infoId}">${item.listName}</form:option>
+						</c:forEach>
+					</form:select>
+				</td>
+			</tr>
+			<tr>
+				<td class="width-15 active">
+					<label class="pull-right">生效时间:</label>
+				</td>
+				<td class="width-35">
+					<input id="startTime" name="startTime" type="text" maxlength="20" class="laydate-icon form-control layer-date input-sm" value="" style="width: 151px;font-size: 12px;">
+					<span>至</span>
+					<input id="endTime" name="endTime" type="text" maxlength="20" class="laydate-icon form-control layer-date input-sm" value="" style="width: 151px;font-size: 12px;">
+					<span style="margin-left: 36px;">排序:</span>
+					<input id="sort" name="endTime" type="text" maxlength="20" value="" style="width: 97px;height: 34px;font-size: 12px;">
+				</td>
+			</tr>
+			<tr>
+				<td class="width-15 active">
+					<label class="pull-right">任务奖励:</label>
+				</td>
+				<td class="width-35">
+					<span>蜜蜂</span>
+					<input id="rewardValue" name="rewardValue" type="text" maxlength="20" value="" style="width: 119px;height: 34px;font-size: 12px;">
+					<span>g</span>
+					<span style="margin-left: 55px">经验值</span>
+					<input id="experience" name="experience" type="text" maxlength="20" value="" style="width:  119px;height: 34px;font-size: 12px;">
+				</td>
+			</tr>
+
+			<tr>
+				<td class="width-15 active">
+					<label class="pull-right">连接:</label>
+				</td>
+				<td class="width-35">
+					<input id="orderId" name="taskUrl" class="form-control" type="text" value="" maxlength="50">
+				</td>
+			</tr>
+			<tr>
+				<td class="width-15 active">
+					<label class="pull-right">任务说明:</label>
+				</td>
+				<td class="width-35">
+						<textarea id="taskDesc" name="taskDesc" maxlength="50" style="height: 139px;" class="form-control error" aria-invalid="true">
+				</textarea>
+			</td>
+			</tr>
+			</tbody>
+		</table>
+		<div class="pull-right">
+			<a class="btn btn-white" onclick="top.closeCurrTab();">关闭</a>
+		    <button class="btn btn-success">保存</button>
+		</div>
+	</form:form>
+                </div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "hebei",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "buildTest": "rmdir /s/q ..\\test & fis3 release test -c -w",
+    "build": "rmdir /s/q ..\\dist & fis3 release build -c -d ../dist",
+    "server": "fis3 server start --root ../dist"
+  },
+  "author": "xwtec",
+  "license": ""
+}

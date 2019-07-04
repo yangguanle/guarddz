@@ -1,0 +1,67 @@
+/*! global style */
+// @import url(_normalize.less);
+@import url(_reset.less);
+@import url(_font-awesome.less);
+@import url(_grid.less);
+@import url(_popup.less);
+
+@pink: #f69;
+
+html, body {
+    color: #333; font-size: .24rem; line-height: 1.5em; background: #fff;
+}
+
+.container {
+    width: 6.4rem; margin: 0 auto;
+}
+
+////
+// form
+
+@radio: ~'[type="radio"]';
+@checkbox: ~'[type="checkbox"]';
+
+.xwRadio,
+.xwCheckbox {
+    i {
+        display: inline-block; width: .32rem; height: .32rem; border-radius: 50%; border: 1px solid #ddd; vertical-align: middle; margin-right: .1rem;
+        &:before {
+            content: ""; display: none; width: 50%; height: 50%; margin: 50% 0 0 50%; transform: translate(-50%, -50%);
+        }
+    }
+    span {
+        display: inline-block; vertical-align: middle;
+    }
+}
+
+.xwRadio @{radio},
+.xwCheckbox @{checkbox} {
+    display: none;
+    &:checked ~ i {
+        border-color: @pink;
+        &:before {
+            display: block;
+        }
+    }
+    &[disabled] ~ i {
+        border-color: #ddd; background: #eee;
+    } 
+}
+
+.xwRadio @{radio} ~ i:before {
+    background: @pink; border-radius: 50%;
+}
+.xwRadio @{radio}[disabled] ~ i:before {
+    background: #ccc;
+}
+
+.xwCheckbox i {
+    border-radius: .06rem;
+}
+
+.xwCheckbox @{checkbox}:checked ~ i:before {
+    height: 30%; border: 2px solid @pink; border-top: none; border-right: none; transform: translate(-50%, -70%) rotate(-45deg);
+}
+.xwCheckbox @{checkbox}[disabled] ~ i:before {
+    border-color: #ccc;
+}

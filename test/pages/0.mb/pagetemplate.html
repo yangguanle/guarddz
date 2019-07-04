@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit"> 
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <title>Document</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="applicable-device" content="pc,mobile">
+    <script>
+    /*rem适配*/
+    (function (deviceWidth){
+        var root = document.documentElement;
+        var w = root.clientWidth;
+        root.style.fontSize = (w > 720 ? 720 : w < 320 ? 320 : w) / deviceWidth * 100 + "px";
+    })(640);
+    </script>
+    <!-- 公用js与css -->
+    <script src="../../global/lib/Es-shim/es5-shim.min.js"></script>
+    <script src="../../global/lib/Es-shim/es6-shim.min.js"></script>
+    <link rel="stylesheet" href="../../global/css/global.css">
+    <!-- 本页面私有js与css -->
+    <link rel="stylesheet" href="static/main.css">
+    <script src="static/main.js"></script>
+</head>
+<body>
+<!-- container -->
+<div class="container" id="container">
+    <div class="page"></div>111
+</div>
+<!-- //container -->
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit"> 
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <title>Document</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="applicable-device" content="pc,mobile">
+    <script>
+    /*rem适配*/
+    (function (deviceWidth){
+        var root = document.documentElement;
+        var w = root.clientWidth;
+        root.style.fontSize = (w > 720 ? 720 : w < 320 ? 320 : w) / deviceWidth * 100 + "px";
+    })(640);
+    </script>
+    <!-- 公用js与css -->
+    <link rel="stylesheet" href="../../global/css/global.css">
+    <script src="../../global/js/public.js"></script>
+    <!-- 本页面私有js与css -->
+    <!-- <link rel="stylesheet" href="static/main.less"> -->
+    <!-- <script src="static/main.js"></script> -->
+
+    <style>
+    /* 自定义的弹框样式 */
+    .popup-my .popup-my__ico {
+        display: inline-block; width: .8rem; height: .8rem; background: url(../../global/img/popup-loading-ico.png);        background-size: 100% 100%;
+    }
+    .popup-my .popup-Dialog__tit{
+        color: #336699; border-bottom: 1px solid #336699;
+    }
+    .popup-my .popup-Dialog__content p{
+        color: #f90;
+    }
+    .popup-my .btn-my {
+        background: #336699; color: #fff;
+    }
+    </style>
+</head>
+<body>
+
+<button onclick="javascript:Popup.show('popup-normalConfirm')">普通confirm</button>
+<button onclick="javascript:Popup.show('popup-normalConfirm2')">3个按钮</button>
+<button onclick="javascript:Popup.show('popup-normalAlert')">1个按钮</button>
+<button onclick="javascript:Popup.show('popup-notitleConfirm')">没有标题</button>
+<button onclick="javascript:Popup.show('popup-my')">自定义的弹框</button>
+
+<!-- popup-Dialog -->
+<div class="popup popup-Dialog popup-normalConfirm" id="popup-normalConfirm">
+    <div class="popup-Dialog__tit">提示</div>
+    <div class="popup-Dialog__content">
+        <p>这里是内容</p>
+    </div>
+    <div class="xwRow popup-Dialog__buttons">
+        <span class="xwCol-6"><a href="javascript:;" class="btn btn-pink" onclick="javascript:alert('确定')">确定</a></span>
+        <span class="xwCol-6"><a href="javascript:;" class="btn btn-gray" onclick="javascript:Popup.hide()">关闭</a></span>
+    </div>
+</div>
+<!-- //popup-Dialog -->
+<!-- popup-Dialog -->
+<div class="popup popup-Dialog popup-normalConfirm2" id="popup-normalConfirm2">
+    <div class="popup-Dialog__tit">提示</div>
+    <div class="popup-Dialog__content">
+        <p>这里是内容</p>
+    </div>
+    <div class="xwRow popup-Dialog__buttons">
+        <span class="xwCol-4"><a href="javascript:;" class="btn btn-pink" onclick="javascript:alert('确定1')">确定1</a></span>
+        <span class="xwCol-4"><a href="javascript:;" class="btn btn-pink" onclick="javascript:alert('确定2')">确定2</a></span>
+        <span class="xwCol-4"><a href="javascript:;" class="btn btn-gray" onclick="javascript:Popup.hide()">关闭</a></span>
+    </div>
+</div>
+<!-- //popup-Dialog -->
+<!-- popup-Dialog -->
+<div class="popup popup-Dialog popup-notitleConfirm" id="popup-notitleConfirm">
+    <div class="popup-Dialog__content">
+        <p>这里是内容</p>
+    </div>
+    <div class="xwRow popup-Dialog__buttons">
+        <span class="xwCol-6"><a href="javascript:;" class="btn btn-pink" onclick="javascript:alert('确定')">确定</a></span>
+        <span class="xwCol-6"><a href="javascript:;" class="btn btn-gray" onclick="javascript:Popup.hide()">关闭</a></span>
+    </div>
+</div>
+<!-- //popup-Dialog -->
+
+<!-- popup-Dialog -->
+<div class="popup popup-Dialog popup-normalAlert" id="popup-normalAlert">
+    <div class="popup-Dialog__tit">提示</div>
+    <div class="popup-Dialog__content">
+        <p>这里是内容</p>
+    </div>
+    <div class="xwRow popup-Dialog__buttons">
+        <span class="xwCol-12"><a href="javascript:;" class="btn btn-pink" onclick="javascript:Popup.hide()">确定</a></span>
+    </div>
+</div>
+<!-- //popup-Dialog -->
+
+
+<!-- popup-Dialog -->
+<!-- 自定义弹框，请前端同学根据实际情况自己配置 -->
+<div class="popup popup-Dialog popup-my" id="popup-my">
+    <div class="popup-Dialog__tit">标题标题</div>
+    <div class="popup-Dialog__content">
+        <i class="popup-my__ico"></i>
+        <p>这里是内容</p>
+    </div>
+    <div class="xwRow popup-Dialog__buttons">
+        <span class="xwCol-12"><a href="javascript:;" class="btn btn-my" onclick="javascript:Popup.hide()">确定</a></span>
+    </div>
+</div>
+<!-- //popup-Dialog -->
+
+</body>
+</html>
